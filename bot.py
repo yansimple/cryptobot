@@ -9,7 +9,7 @@ bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=["start"])
 def repeat_all_messages(message):
-    id = massage.chat.id
+    id = message.chat.id
     id = str(id)
     def add_DATABASE():
         db = open("DataBaseId.txt", "r")

@@ -1,7 +1,7 @@
 import config
 import telebot
 from telebot import types
-print(config.token)
+
 bot = telebot.TeleBot(config.token)
 
 
@@ -26,7 +26,7 @@ def repeat_all_messages(message):
             input()
         else:
             print("ID " + id + " allready in DataBase")
-
+    add_DATABASE()
 
 
     keyboard = types.InlineKeyboardMarkup()

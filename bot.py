@@ -4,8 +4,31 @@ from telebot import types
 print(config.token)
 bot = telebot.TeleBot(config.token)
 
+
+
+
 @bot.message_handler(commands=["start"])
 def repeat_all_messages(message):
+    id = massage.chat.id
+    id = str(id)
+    def add_DATABASE():
+        db = open("DataBaseId.txt", "r")
+        List_Id = db.read()
+        List_Id = List_Id.split(",")
+        db.close()
+        id_in_list = id
+        if id_in_list not in List_Id:
+            db = open("DataBaseId.txt", "a")
+            string_add = (str(id) + ",")
+            db.write(string_add)
+            print(id, " was added")
+            db.close()
+            input()
+        else:
+            print("ID " + id + " allready in DataBase")
+
+
+
     keyboard = types.InlineKeyboardMarkup()
     callback_button1 = types.InlineKeyboardButton(text="Chcę nauczyć się handlować", callback_data="answ1")
     callback_button2 = types.InlineKeyboardButton(text="Chcę zacząć zarabiać", callback_data="answ1")

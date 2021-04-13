@@ -47,7 +47,6 @@ def repeat_all_messages(message):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
     try:
-
         if call.data == "answ1":
             keyboard = types.InlineKeyboardMarkup()
             callback_button1 = types.InlineKeyboardButton(text="Tak, udany", callback_data="answ2")
